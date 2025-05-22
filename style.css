@@ -1,0 +1,395 @@
+/* Reset default list styling */
+li {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Body & container */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #0d0d0d;
+  color: #e5e5e5;
+  margin: 0;
+}
+
+.text {
+  max-width: 700px;
+  width: 100%;
+  line-height: 1.6;
+  margin: 0 6cm;
+  position: relative;
+  padding-right: 140px; /* Space for absolute positioned profile on desktop */
+}
+
+/* Headings */
+h1,
+h2 {
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+}
+
+/* Divider */
+hr {
+  border: none;
+  border-top: 2px solid #ffffff;
+  margin: 10px 0 30px 0;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #cccccc;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Links */
+a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #000000; /* This seems like a mistake for a dark theme, might intend #FFFFFF or a light color */
+  text-decoration: underline;
+}
+
+/* Project & Connect links */
+.Projects li a,
+.connect li a {
+  padding: 6px 12px;
+  display: inline-block;
+  border-radius: 6px;
+  background-color: #1a1a1a;
+  transition: background-color 0.3s ease;
+  color: #e0f7fa;
+}
+
+.Projects li a:hover,
+.connect li a:hover {
+  background-color: #000000; /* Similar to above, hover makes text #121212 (dark) on black bg */
+  color: #121212;
+}
+
+/* Experience section */
+.experience li {
+  font-style: italic;
+  color: #999;
+  margin-left: 10px;
+}
+
+/* Profile section */
+.profile {
+  position: absolute;
+  top: 100px;
+  left: 980px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #00e6e6;
+  cursor: pointer;
+  z-index: 1000;
+  transition: box-shadow 0.3s ease;
+  background: #1a1a1a;
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Glow effect on hover */
+.profile:hover {
+  box-shadow: 0 0 30px 5px #5fffd7;
+}
+
+/* Arch icon */
+.Arch {
+  position: absolute;
+  top: 450px;
+  left: 770px;
+  width: 20px;
+}
+
+/* Fastfetch */
+.fastfetch {
+  display: block;
+  margin: 0 7cm;
+  max-width: 400px;
+  width: 50%;
+  height: auto;
+}
+
+/* Crazy click animation */
+@keyframes crazySpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    transform: rotate(720deg) scale(4);
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    transform: rotate(1440deg) scale(1);
+    filter: hue-rotate(360deg);
+  }
+}
+
+.profile.crazy {
+  animation: crazySpin 1.5s ease forwards;
+}
+
+/* Theme switch button (desktop + mobile) */
+.theme-switch {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Hidden checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Custom slider design */
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00bcd4;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
+}
+
+.slider:hover {
+  transform: scale(1.05);
+}
+
+body.light .slider {
+  background-color: #222;
+  color: #fff;
+}
+
+/* Dark Mode (default) */
+body.dark {
+  background: #0d0d0d;
+  color: #e5e5e5;
+}
+
+body.dark a {
+  color: #ffffff;
+}
+body.dark a:hover {
+  /* Added to fix dark text on dark background for general links */
+  color: #5fffd7; /* Or another light color */
+}
+
+body.dark .Projects li a,
+body.dark .connect li a {
+  background-color: #1a1a1a;
+  color: #e0f7fa;
+}
+
+body.dark .Projects li a:hover,
+body.dark .connect li a:hover {
+  background-color: #ffffff; /* White background */
+  color: #121212; /* Dark text - this is fine */
+}
+
+body.dark .profile {
+  border-color: #ffffff;
+}
+
+body.dark .profile:hover {
+  box-shadow: 0 0 30px 5px #5fffd7;
+}
+
+body.dark h2 {
+  color: #ffffff;
+}
+
+body.dark p,
+body.dark li {
+  color: #ccc;
+}
+
+body.dark hr {
+  border-top: 2px solid #ffffff;
+}
+
+/* Light Mode */
+body.light {
+  background: #f5f5f5;
+  color: #000;
+}
+
+body.light a {
+  color: #007acc;
+}
+
+body.light .Projects li a,
+body.light .connect li a {
+  background-color: #e0e0e0;
+  color: #1a1a1a;
+}
+
+body.light .Projects li a:hover,
+body.light .connect li a:hover {
+  background-color: #007acc;
+  color: white;
+}
+
+body.light .profile {
+  border-color: #007acc; /* Changed from #ffffff for better visibility on light bg */
+}
+
+body.light .profile:hover {
+  box-shadow: 0 0 30px 5px #66ccff;
+}
+
+body.light h2 {
+  color: #005577;
+}
+
+body.light p,
+body.light li,
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4,
+body.light h5,
+body.light h6,
+body.light a {
+  color: #000 !important;
+}
+
+body.light hr {
+  border-top: 2px solid #000000;
+}
+
+body.light a:hover {
+  color: #333 !important;
+}
+
+/* Connect section */
+.connect ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.connect li {
+  margin: 0;
+}
+
+.full {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 20px 40px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .text {
+    margin: 0 1rem; /* Use rem for responsive margins */
+    padding-right: 1rem; /* Adjust padding for smaller screens */
+    max-width: 100%; /* Allow text container to use full available width */
+    /* width: 100%; is inherited and fine */
+  }
+
+  .profile {
+    position: static; /* Change from absolute to flow with content */
+    width: 180px; /* Reduce size for mobile */
+    height: 180px; /* Reduce size for mobile */
+    margin: 30px auto; /* Center profile image with vertical margin */
+    box-shadow: none; /* Remove desktop shadow if not desired, or adjust */
+    border-width: 2px; /* Keep border consistent or adjust as needed */
+  }
+
+  .Arch {
+    display: none; /* Hide decorative element on small screens */
+  }
+
+  .fastfetch {
+    display: none;
+  }
+
+  h1 {
+    font-size: 1.8rem; /* Adjust heading size for mobile */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Adjust heading size for mobile */
+  }
+
+  p {
+    font-size: 1rem; /* Adjust paragraph font size for readability */
+    margin-bottom: 12px; /* Adjust spacing */
+  }
+
+  li {
+    font-size: 1rem; /* Adjust list item font size */
+    margin: 6px 0; /* Adjust spacing */
+  }
+
+  .experience li {
+    margin-left: 5px; /* Slightly reduce indent for experience items */
+  }
+
+  hr {
+    margin: 15px 0 25px 0; /* Adjust divider margins */
+  }
+
+  .Projects li a,
+  .connect li a {
+    padding: 5px 10px; /* Slightly smaller padding for buttons */
+    font-size: 0.9rem; /* Smaller font for button text */
+  }
+
+  .connect ul {
+    gap: 10px; /* Reduce gap between connect items */
+    justify-content: center; /* Center items if they wrap */
+  }
+
+  .theme-switch {
+    bottom: 15px; /* Keep adjusted position */
+    right: 15px; /* Keep adjusted position */
+  }
+
+  .slider {
+    width: 40px; /* Keep adjusted size */
+    height: 40px; /* Keep adjusted size */
+    font-size: 1.2rem; /* Keep adjusted font size */
+    box-shadow: 0 3px 10px rgba(0, 188, 212, 0.3); /* Keep adjusted shadow */
+  }
+
+  .full {
+    max-width: 95%; /* Allow .full container to use more width on mobile */
+    padding: 20px 1rem; /* Reduce side padding for mobile */
+  }
+}

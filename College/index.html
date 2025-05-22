@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Projects</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="theme-switch">
+      <label class="switch">
+        <input type="checkbox" id="themeToggle" />
+        <span class="slider" id="themeIcon">🌙</span>
+      </label>
+    </div>
+
+    <div class="text full">
+      <h1>College Projects</h1>
+      <p>
+        A collection of the projects I’ve worked on during my college journey.
+        These projects showcase my skills in software development, machine
+        learning, and more.
+      </p>
+      <hr />
+      <section class="project">
+        <h2>
+          <a href="https://github.com/ashutoshk-20/mlops-pr">
+            <u>E-commerce website | Product recommendation</u> 🔗
+          </a>
+        </h2>
+        <p>
+          <em>May 2025 | Python, OpenAI API, Product recommendation, Flask, MongoDB, Docker</em>
+        </p>
+        <p>
+          This Flask-based e-commerce web application integrates MongoDB to manage product and user data, offering product browsing with pagination, user authentication with OTP verification, and a chat assistant powered by OpenRouter’s API. The core recommendation system combines traditional database sampling and an ML-powered nearest neighbor model: it extracts product features using text vectorization and numeric attributes scaled via a trained scaler, then employs a pre-trained nearest neighbor model to suggest similar products based on these embeddings. The app demonstrates MLOps fundamentals by loading versioned model artifacts dynamically, performing feature extraction consistently at runtime, and integrating real-time recommendations seamlessly within the user-facing product pages, all while maintaining robust logging, error handling, and scalable deployment practices.
+        </p>
+      </section>
+      <section class="project">
+        <h2>
+          <a href="https://github.com/ashutoshk-20/Stock-Prediction"
+            ><u>Stock Price Prediction | Linear Regression Model</u> 🔗</a
+          >
+        </h2>
+        <p>
+          <em
+            >May 2025 | Python, Streamlit, Scikit-learn,
+            Pandas</em
+          >
+        </p>
+        <p>
+          This Streamlit app allows users to upload a CSV file containing stock market data with columns like Date, Open, High, Low, and Close. It uses a simple linear regression model to predict stock closing prices based on the time index, splitting the data into training and testing sets to evaluate performance. The app visually compares actual vs predicted prices through line charts, highlights prediction errors via scatter plots, and provides additional insights with interactive sunburst charts breaking down prices by year, month, and day, as well as detailed candlestick charts for price movements, helping users understand trends and forecast stock behavior in an intuitive way.
+        </p>
+      </section>
+      <section class="project">
+        <h2>
+          <a href="https://github.com/ashutoshk-20/Hotel-Management">
+            <u>Hotel Management System | Web Application</u> 🔗
+          </a>
+        </h2>
+        <p>
+          <em>April 2025 | JavaScript, PostgreSQL, Node, Express</em>
+        </p>
+        <p>
+          This Express.js application serves as a basic hotel room management system connected to a PostgreSQL database. It allows users to submit booking details through a form, which are then inserted into a users table including personal info, arrival/departure dates, number of adults and kids, and payment method. The app also provides a room availability check by querying the rooms table based on requested dates and number of guests, returning the count of available rooms matching the criteria. Static files are served from a public directory, and user interactions trigger alerts and redirections, enabling straightforward booking and availability management for hotel operations.
+        </p>
+      </section>
+    </div>
+    <script>
+      const toggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+
+      // Load saved theme from localStorage
+      if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light");
+        toggle.checked = true;
+        themeIcon.textContent = "☀️";
+      }
+
+      toggle.addEventListener("change", () => {
+        document.body.classList.toggle("light");
+        const isLight = document.body.classList.contains("light");
+
+        themeIcon.textContent = isLight ? "☀️" : "🌙";
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+      });
+    </script>
+  </body>
+</html>

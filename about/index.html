@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <!-- Theme Toggle -->
+    <div class="theme-switch">
+      <label class="switch">
+        <input type="checkbox" id="themeToggle" />
+        <span class="slider" id="themeIcon">🌙</span>
+      </label>
+    </div>
+
+    <!-- Page Content -->
+    <div class="text full">
+      <h1>About Me</h1>
+      <p>
+        Currently pursuing Engineering and in love with tech and software
+        development.
+      </p>
+      <hr />
+      <p>
+        I am passionate about building scalable and efficient applications, 
+        and I enjoy working on projects that integrate machine learning and 
+        data analysis. My ability to adapt to new technologies and environments 
+        allows me to tackle complex problems and deliver innovative solutions.
+      </p>
+
+      <section class="software-skills">
+        <h2>Software Skills & Tools I've Learned</h2>
+        <hr />
+        <ul>
+          <li>
+            <strong>Programming Languages:</strong> Python, C++, JavaScript, React.Js.
+          </li>
+          <li>
+            <strong>Frameworks & Libraries:</strong> Flask,
+            Scikit-learn, TensorFlow, MLflow.
+          </li>
+          <li>
+            <strong>Tools & Platforms:</strong> Git, VS Code,
+            Jupyter, Docker.
+          </li>
+          <li>
+            <strong>Concepts:</strong> ML pipelines, data analysis, MLOps, cloud
+            basics.
+          </li>
+          <li>
+            <strong>Databases:</strong> PostgreSQL, MongoDB.
+          </li>
+        </ul>
+      </section>
+
+      <section class="software-inspiration">
+        <h2>Software That Inspires Me</h2>
+        <hr />
+        <ul>
+          <li>
+            <strong>Python Ecosystem:</strong> Python is more than just a language, it’s a whole ecosystem. 
+            Whether it’s web development, data science, AI, or automation, there’s almost always a library 
+            ready to help. It’s like standing on the shoulders of thousands of brilliant developers, making ideas easier to bring to life.
+          </li>
+          <li>
+            <strong>ChatGPT:</strong> ChatGPT inspires me by showing how powerful and accessible AI can be. It turns complex technology into 
+            something anyone can interact with, sparking my curiosity and pushing me to explore the boundaries of what’s possible with machine 
+            learning and human-computer interaction
+          </li>
+          <li>
+            <strong>VS Code:</strong> VS Code is a game-changer for developers. It’s not just a code editor; it’s a platform that adapts to your 
+            workflow. With its extensions and customization, it feels like you’re building your own coding environment, tailored to your needs.
+            It’s fast, lightweight, and packed with features that make coding a breeze. Plus, the community support is phenomenal,
+            constantly pushing the boundaries of what’s possible. It’s like having a Swiss Army knife for coding, and it inspires me to be more
+            efficient and creative in my development process.
+          </li>
+          <li>
+            <strong>Git:</strong> Git is a powerful tool that has transformed the way we collaborate on software projects. 
+            It allows multiple developers to work on the same codebase simultaneously, making it easier to track changes, 
+            manage versions, and resolve conflicts. The branching and merging capabilities enable teams to experiment with new features 
+            without disrupting the main codebase. Git’s distributed nature also means that every developer has a complete copy of the repository, 
+            enhancing collaboration and reducing the risk of data loss. Overall, Git has become an essential part of modern software development.
+          </li>
+          
+        </ul>
+      </section>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      const toggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+
+      // Load saved theme from localStorage
+      if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light");
+        toggle.checked = true;
+        themeIcon.textContent = "☀️";
+      }
+
+      toggle.addEventListener("change", () => {
+        document.body.classList.toggle("light");
+        const isLight = document.body.classList.contains("light");
+
+        themeIcon.textContent = isLight ? "☀️" : "🌙";
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+      });
+    </script>
+  </body>
+</html>

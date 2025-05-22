@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashutosh</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="description"
+      content="Portfolio and background of an engineering student passionate about tech and software."
+    />
+    <meta
+      name="keywords"
+      content="AI, software engineering, portfolio, CUDA, Python,ashutoshk-20,GitHub"
+    />
+    <meta name="author" content="Your Name" />
+  </head>
+  <body>
+    <div class="text">
+      <h2>Hello, myself Ashutosh</h2>
+      <hr />
+      <div class="about">
+        <h2>About Me</h2>
+        <p>
+          Currently persuing Engineering in Artificial Intelligence and Data
+          Science at AISSMS IOIT(2026)
+        </p>
+        <p>
+          Currently learning about AI & ML,MLops and Cloud. <br />
+          Passionate about building scalable and efficient applications
+          <br />
+
+          <a href="/about/"><u>More about me</u></a>
+        </p>
+      </div>
+      <div class="experience">
+        <h2>
+          <a style="text-decoration: none"> Experience</a>
+          <span>
+            ( <a href="./resume.pdf"><u>resume</u></a> )
+          </span>
+        </h2>
+        <li>None 🥀(yet)</li>
+      </div>
+      <div class="Projects">
+        <h2>Projects</h2>
+        <li><a href="/workprojects">Work Projects</a></li>
+        <li><a href="/College">College projects</a></li>
+        <li><a href="/Personal">Personal Projects</a></li>
+      </div>
+      <div class="connect">
+        <h2>Connect with me</h2>
+        <ul>
+          <li>
+            <a href="www.linkedin.com/in/ashutosh-khedkar-a47b2825a"
+              >LinkedIn</a
+            >
+          </li>
+          <li><a href="https://github.com/ashutoshk-20">GitHub</a></li>
+          <li><a href="https://www.kaggle.com/ashuvk">Kaggle</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="profile">
+      <img src="profile.jpg" alt="profile" />
+    </div>
+    <div class="theme-switch">
+      <label class="switch">
+        <input type="checkbox" id="modeToggle" />
+        <span class="slider">
+          <span class="icon">🌙</span>
+        </span>
+      </label>
+    </div>
+  </body>
+  <script>
+    const profile = document.querySelector(".profile");
+    profile.addEventListener("click", () => {
+      profile.classList.add("crazy");
+
+      profile.addEventListener(
+        "animationend",
+        () => {
+          profile.classList.remove("crazy");
+        },
+        { once: true }
+      );
+    });
+    const toggle = document.getElementById("modeToggle");
+    const sliderIcon = document.querySelector(".slider .icon");
+    const body = document.body;
+
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    body.classList.add(savedTheme);
+    toggle.checked = savedTheme === "light";
+    sliderIcon.textContent = savedTheme === "light" ? "☀️" : "🌙";
+
+    toggle.addEventListener("change", () => {
+      if (toggle.checked) {
+        body.classList.replace("dark", "light");
+        sliderIcon.textContent = "☀️";
+        localStorage.setItem("theme", "light");
+      } else {
+        body.classList.replace("light", "dark");
+        sliderIcon.textContent = "🌙";
+        localStorage.setItem("theme", "dark");
+      }
+    });
+  </script>
+</html>
